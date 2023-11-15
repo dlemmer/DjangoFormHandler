@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="">
+  <title>Document</title>
+  <link rel="stylesheet" href="{% static "css/form.css" %}">
+  <script src="{% static 'js/check_form.js' %}"></script>
+</head>
+
+<body>
+  <form class="form">
+    <div class="form_title">Приветствуем</div>
+    <div class="subtitle">Оставьте заявку, и мы свяжемся с вами!</div>
+    <div class="input-container ic1">
+      <input id="firstname" name="name" class="input" type="text" placeholder="Имя" />
+    </div>
+    <div class="input-container ic2">
+      <input id="lastname" name="sname" class="input" type="text" placeholder="Фамилия" />
+    </div>
+    <div class="input-container ic2">
+      <input id="email" name="email" class="input" type="text" placeholder="E-mail" />
+    </div>
+    <div class="data_agree">
+      <input type="checkbox" id="horns" name="data_check">
+      <label id="data_name" for="horns">Согласие на обработку персональных данных</label>
+    </div>
+    <input type="submit" class="send_button" value='ОТПРАВИТЬ'>
+  </form>
+</body>
+
+</html>
