@@ -53,34 +53,35 @@ body {
 }
 
 .input-container {
-  height: 50px;
+  height: 40px;
   position: relative;
   width: 100%;
 }
 
 .ic1 {
-  margin-top: 40px;
-}
+  margin-top: 20px;
+} 
 
-.ic2 {
+/* .ic2 {
   margin-top: 30px;
-}
+}  */
 
 .input {
-  background-color: #303245;
+  /* background-color: #303245;
   border-radius: 12px;
   border: 0;
-  box-sizing: border-box;
+  box-sizing: border-box; */
   color: #eee;
-  font-size: 18px;
+  margin-right: 7px;
+  /* font-size: 18px;
   height: 100%;
   outline: 0;
   padding: 4px 20px 0;
-  width: 100%;
+  width: 100%; */
 }
 
 
-.placeholder {
+.name { 
   color: #65657b;
   font-family: sans-serif;
   left: 20px;
@@ -120,7 +121,7 @@ body {
 }
 
 .data_agree {
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 #data_name {

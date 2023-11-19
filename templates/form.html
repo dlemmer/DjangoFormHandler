@@ -15,23 +15,21 @@
   <form class="form" action="" method="post" >
     <div class="form_title">Приветствуем</div>
     <div class="subtitle">Оставьте заявку, и мы свяжемся с вами!</div>
+
     {% csrf_token %}
-    {{ form.as_p }}
 
-
-    {% comment %} <div class="input-container ic1">
-      <input id="firstname" name="name" class="input" type="text" placeholder="Имя" />
+   <div class="input-container ic1">
+    <label class="input" >{{form.name.label}}</label> {{form.name}}
     </div>
     <div class="input-container ic2">
-      <input id="lastname" name="sname" class="input" type="text" placeholder="Фамилия" />
+      <label class='input' >{{form.surname.label}}</label>{{form.surname}}
     </div>
     <div class="input-container ic2">
-      <input id="email" name="email" class="input" type="text" placeholder="E-mail" />
+      <label class='input' >{{form.email.label}}</label>{{form.email}}
     </div>
     <div class="data_agree">
-      <input type="checkbox" id="horns" name="agreement_check">
-      <label id="data_name" for="horns">Согласие на обработку персональных данных</label>
-    </div> {% endcomment %}
+      <label class='input' >{{form.agreement_check.label}}</label>{{form.agreement_check}}
+    </div>
     <input type="submit" class="send_button" value='ОТПРАВИТЬ'>
   </form>
 </body>
