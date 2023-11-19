@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="" />
+    <title>Registration completed</title>
+  </head>
+
+  <body>
+    <h1>Welcome to MIAVI!</h1>
+    <label for="time_range">Time range:</label>
+    <select name="time_range" id="time_range">
+      <option value="today">Today</option>
+      <option value="yesterday">Yesterday</option>
+      <option value="this_month">This month</option>
+      <option value="all_time">All time</option>
+    </select>
+    <form action='' method='POST'>
+      <input type="submit" name="receive_select_query" />
+    </form>
+  </body>
+</html>

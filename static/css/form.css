@@ -93,7 +93,7 @@ body {
   top: 20px;
 }
 
-.send_button {
+.send_button, .select_button {
   background-color: rgb(240, 95, 64);
   border-radius: 12px;
   border: 0;
