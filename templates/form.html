@@ -12,10 +12,14 @@
 </head>
 
 <body>
-  <form class="form">
+  <form class="form" action="" method="post" >
     <div class="form_title">Приветствуем</div>
     <div class="subtitle">Оставьте заявку, и мы свяжемся с вами!</div>
-    <div class="input-container ic1">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    {% comment %} <div class="input-container ic1">
       <input id="firstname" name="name" class="input" type="text" placeholder="Имя" />
     </div>
     <div class="input-container ic2">
@@ -25,11 +29,12 @@
       <input id="email" name="email" class="input" type="text" placeholder="E-mail" />
     </div>
     <div class="data_agree">
-      <input type="checkbox" id="horns" name="data_check">
+      <input type="checkbox" id="horns" name="agreement_check">
       <label id="data_name" for="horns">Согласие на обработку персональных данных</label>
-    </div>
+    </div> {% endcomment %}
     <input type="submit" class="send_button" value='ОТПРАВИТЬ'>
   </form>
 </body>
 
 </html>
+
