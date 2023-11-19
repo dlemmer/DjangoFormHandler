@@ -18,18 +18,12 @@
 
     {% csrf_token %}
 
-   <div class="input-container ic1">
-    <label class="input" >{{form.name.label}}</label> {{form.name}}
-    </div>
+    <div class="input-container ic1"></div>
+    {% for f in form %}
     <div class="input-container ic2">
-      <label class='input' >{{form.surname.label}}</label>{{form.surname}}
-    </div>
-    <div class="input-container ic2">
-      <label class='input' >{{form.email.label}}</label>{{form.email}}
-    </div>
-    <div class="data_agree">
-      <label class='input' >{{form.agreement_check.label}}</label>{{form.agreement_check}}
-    </div>
+      <label class="input" >{{f.label}}</label> {{ f }}
+      </div>
+    {% endfor %}
     <input type="submit" class="send_button" value='ОТПРАВИТЬ'>
   </form>
 </body>
