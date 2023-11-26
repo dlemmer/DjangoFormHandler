@@ -9,3 +9,5 @@ class User_data(models.Model):
     reg_data = models.DateField(auto_now_add=True)
     reg_time = models.DateTimeField(auto_now_add=True, blank=True)
     agreement_check = models.BooleanField()
+    def __str__(self):
+        return self.name

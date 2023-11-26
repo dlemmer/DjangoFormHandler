@@ -1,0 +1,41 @@
+{% extends 'form_answer.html' %}
+
+{% block content %}
+  <h1>All Data</h1>
+  <button id="show-data-btn">Show Data</button>
+  <table id="data-table">
+    <thead>
+      <tr>
+        <th>Column 1</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+        <th>Column 2</th>
+        <th>Column 3</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in data %}
+        <tr>
+          <td>{{ item.column1 }}</td>
+          <td>{{ item.column2 }}</td>
+          <td>{{ item.column3 }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
+
+{% block scripts %}
+  <script>
+    const showDataBtn = document.querySelector('#show-data-btn');
+    const dataTable = document.querySelector('#data-table');
+
+    showDataBtn.addEventListener('click', () => {
+      fetch('/show-all-data/')
+        .then(response => response.text())
+        .then(data => {
+          dataTable.innerHTML = data;
+        });
+    });
+  </script>
+{% endblock %}

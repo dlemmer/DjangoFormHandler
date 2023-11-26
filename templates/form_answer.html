@@ -10,11 +10,16 @@
   </head>
 
   <body>
-    <h1>Welcome to MIAVI!</h1>
-    <label for="time_range">Choose your action:</label>
+    <h1>   {{ name }} {{ surname }}, Welcome to MIAVI!</h1>
+    <h3 style="font-weight: 100;">Информация о существующих предложениях по покупке <br> нашей продукции уже отправлена на вашу почту: {{mail}}</h3>
+    <label for="time_range">Выберите желаемое действие:</label>
+
     <input type="submit" value="Edit my data">
     <input type="submit" value="Delete my data">
-    <input type="submit" value="show my data">
+    <input type="submit" value="View all data">
+    
+    {% comment %} <input type="submit" value="Delete my data">
+    <input type="submit" value="Show my data"> {% endcomment %}
     <!-- <select name="time_range" id="time_range">
       <option value="today">Today</option>
       <option value="yesterday">Yesterday</option>
