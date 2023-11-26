@@ -41,6 +41,5 @@ def form_answer_page(request):
     # else:
     #     your_objects = User_data.objects.all()
     #     return HttpResponse({'your_objects': your_objects})
-
         
     return render(request, './form_answer.html')

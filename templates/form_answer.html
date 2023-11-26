@@ -11,15 +11,20 @@
 
   <body>
     <h1>Welcome to MIAVI!</h1>
-    <label for="time_range">Time range:</label>
-    <select name="time_range" id="time_range">
+    <label for="time_range">Choose your action:</label>
+    <input type="submit" value="Edit my data">
+    <input type="submit" value="Delete my data">
+    <input type="submit" value="show my data">
+    <!-- <select name="time_range" id="time_range">
       <option value="today">Today</option>
       <option value="yesterday">Yesterday</option>
       <option value="this_month">This month</option>
       <option value="all_time">All time</option>
-    </select>
-    <form action='' method='POST'>
+    </select> -->
+    <!-- <form action='' method='POST'>
+      {% csrf_token %}
       <input type="submit" name="receive_select_query" />
-    </form>
+    </form> -->
+    
   </body>
 </html>
