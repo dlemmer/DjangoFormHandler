@@ -11,3 +11,9 @@ class User_data(models.Model):
     agreement_check = models.BooleanField()
     def __str__(self):
         return self.name
+class User_data_edit(models.Model):
+    name1 = models.CharField(max_length=15)
+    surname1 = models.CharField(max_length=15)
+    email1 = models.EmailField(max_length=50)
+    reg_data1= models.DateField(auto_now_add=True)
+    reg_time1 = models.DateTimeField(auto_now_add=True, blank=True)

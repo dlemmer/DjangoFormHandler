@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="" />
-    <title>Registration completed</title>
-  </head>
 
-  <body>
-    <h1>   {{ name }} {{ surname }}, Welcome to MIAVI!</h1>
-    <h3 style="font-weight: 100;">Информация о существующих предложениях по покупке <br> нашей продукции уже отправлена на вашу почту: {{mail}}</h3>
-    <label for="time_range">Выберите желаемое действие:</label>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="" />
+  <script src="{% static 'js/check_form.js' %}"></script>
+  <title>Registration completed</title>
+</head>
 
-    <input type="submit" value="Edit my data">
-    <input type="submit" value="Delete my data">
-    <input type="submit" value="View all data">
-    
-    {% comment %} <input type="submit" value="Delete my data">
-    <input type="submit" value="Show my data"> {% endcomment %}
-    <!-- <select name="time_range" id="time_range">
-      <option value="today">Today</option>
-      <option value="yesterday">Yesterday</option>
-      <option value="this_month">This month</option>
-      <option value="all_time">All time</option>
-    </select> -->
-    <!-- <form action='' method='POST'>
+<body>
+  <h1> {{name}} {{surname}}Добро пожаловать в проект MIAVI!</h1>
+  <h3 style="font-weight: 100;">Информация о существующих предложениях по покупке <br /> нашей продукции уже отправлена
+    на вашу почту: {{ mail }}</h3>
+  <label for="time_range">Выберите желаемое действие:</label>
+  <button onclick="toggleForm()">Изменить данные</button>
+
+  <div class="form" style="display: none">
+    <form method="post">
+
       {% csrf_token %}
-      <input type="submit" name="receive_select_query" />
-    </form> -->
-    
-  </body>
+
+      <h6>*Учтите, данные можно изменить только один раз</h6>
+
+      {% for f in form_edit %}
+      <div>
+        <label>{{ f.label }}</label> {{ f }}
+      </div>
+      {% endfor %}
+      <input type="submit" value='Изменить данные' name='edit'>
+      
+    </form>
+  </div>
+  <form action="" method="get">
+
+    <input type="submit" value='Удалить данные' name='delete'>
+  </form>
+  
+  <script>
+    function toggleForm() {
+      var form = document.querySelector('.form')
+      if (form.style.display === 'none') {
+        form.style.display = 'block'
+      } else {
+        form.style.display = 'none'
+      }
+    }
+  </script>
+</body>
+
 </html>
