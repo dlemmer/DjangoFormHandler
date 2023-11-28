@@ -6,46 +6,58 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="" />
-  <script src="{% static 'js/check_form.js' %}"></script>
+  <link rel="stylesheet" href=""/>
+  <link rel="stylesheet" href="{% static "css/form_answer.css" %}">
+  {% comment %} <script src="{% static 'js/check_form.js' %}"></script> {% endcomment %}
   <title>Registration completed</title>
 </head>
 
 <body>
-  <h1> {{name}} {{surname}}Добро пожаловать в проект MIAVI!</h1>
-  <h3 style="font-weight: 100;">Информация о существующих предложениях по покупке <br /> нашей продукции уже отправлена
-    на вашу почту: {{ mail }}</h3>
-  <label for="time_range">Выберите желаемое действие:</label>
-  <button onclick="toggleForm()">Изменить данные</button>
+  <div class="form">
+    <h1> <i>{{name}} {{surname}},</i> <br>Добро пожаловать в проект MIAVI!</h1>
 
-  <div class="form" style="display: none">
-    <form method="post">
-
-      {% csrf_token %}
-
-      <h6>*Учтите, данные можно изменить только один раз</h6>
-
-      {% for f in form_edit %}
-      <div>
-        <label>{{ f.label }}</label> {{ f }}
-      </div>
-      {% endfor %}
-      <input type="submit" value='Изменить данные' name='edit'>
-      
+    <h3 style="font-weight: 100;">Информация о существующих предложениях по покупке нашей продукции уже отправлена
+      на вашу почту: {{ mail }}</h3>
+    <label for="time_range">Выберите желаемое действие:</label> <br>
+    <button id='button' onclick="toggleForm()">Изменить данные</button>
+  
+    <div class="form_hidden" style="display: none">
+      <form class='form_hidden1' method="post">
+  
+        {% csrf_token %}
+  
+        <h6>*Учтите, данные можно изменить только один раз</h6>
+  
+        {% for f in form_edit %}
+        <div class='field'> 
+          <label >{{ f.label }}</label> {{ f }}
+        </div>
+        {% endfor %}
+        <br>
+        <input id="button" type="submit" value='Отправить запрос' name='edit'>
+        
+      </form>
+    </div>
+    <br>
+    <br>
+    <div class="form2">
+      <form action="" method="get">
+        <input id='button' type="submit" value='Удалить данные' name='delete'>
     </form>
   </div>
-  <form action="" method="get">
-
-    <input type="submit" value='Удалить данные' name='delete'>
-  </form>
+    
+  </div>
   
   <script>
     function toggleForm() {
-      var form = document.querySelector('.form')
+      var form = document.querySelector('.form_hidden')
+      var form_div = document.querySelector('.form')
       if (form.style.display === 'none') {
         form.style.display = 'block'
+        form_div.style.height = '750px'
       } else {
         form.style.display = 'none'
+        form_div.style.height = '550px'
       }
     }
   </script>
