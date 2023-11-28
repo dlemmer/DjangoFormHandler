@@ -14,7 +14,7 @@ body {
   background-color: #15172b;
   border-radius: 20px;
   box-sizing: border-box;
-  height: 550px;
+  height: 450px;
   padding: 20px;
   width: 320px;
   position: fixed;
@@ -53,7 +53,7 @@ body {
 }
 
 .input-container {
-  height: 40px;
+  height: 31px;
   position: relative;
   width: 100%;
 }
@@ -61,10 +61,10 @@ body {
 /* .ic1 {
   margin-top: 10px;
 } */
-
+/* 
 .ic2 {
   margin-top: 5px;
-}
+} */
 
 .input {
   /* background-color: #303245;
@@ -130,4 +130,15 @@ body {
   font-size: 13px;
   color: #eee;
   margin-top: 10px;
+}
+
+/* div.field {
+  padding-bottom: 5px;
+} */
+
+div.field label {
+  display: block;
+  float: left;
+  width: 70px;
+  height: 15px;
 }
