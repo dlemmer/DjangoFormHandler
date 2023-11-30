@@ -29,6 +29,7 @@ def form_page(request):
 def form_answer_page(request):
     if request.method == 'GET':
         form_edit = FormEdit()
+        User_data.objects.latest('id').delete()
         HttpResponse('Ваши данные успешно удалены, надеемся на ваше возвращение')
     else:
         form_edit = FormEdit(request.POST)
